@@ -25,4 +25,18 @@ h1, h2, h3{
     color: #333;
 }
 .book-image{
-    flex-wrap: wrap;}
+    flex-wrap: wrap;
+    width:200px;
+    height: 300px;
+    gap:20px;
+    padding:10px
+}
+
+a{
+    text-decoration: none;
+    color: #333;
+    font-weight: bold
+}
+a:hover{
+    color: #007BFF;
+}

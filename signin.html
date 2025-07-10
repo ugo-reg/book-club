@@ -8,10 +8,14 @@
 <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
 <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
 <link rel="manifest" href="/site.webmanifest">
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="styles1.css">
+
+
 </head>
 <body>
-    <img src="favicon-32x32.png" alt="Book Club Logo" class="logo1">
+    <div class="container">
+    <header>
+    <img src="android-chrome-512x512.png" alt="Book Club Logo" class="logo1">
      <nav>
         <ul>
             <li><a href="index.html">Home</a></li>
@@ -19,20 +23,25 @@
             <li><a href="review.html">Review</a></li>
         </ul>
     </nav>
-    <header>
+    <h1>
         Gina's Book Club
+        </h1>
     </header>
+    <form id="signin-form">
+    <h2>Sign In</h2>         
     <label for="username">Username:
     <input type="text" id="username" name="username" required>
     </label>
     <label for="password">Password:
     <input type="password" id="password" name="password" required>
 </label>
-<button type="submit">Sign In</button>
+<button type="submit" class="signIn" id="signIn">Sign In</button>
+</form>
    <footer>
         <p>&copy; 2025 Gina's Book Club. All rights reserved.</p>
    
     </footer>
+    </div>
 </body>
-<script></script>
+<script src="signin.js" type="module"></script>
 </html>

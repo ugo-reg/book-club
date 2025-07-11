@@ -7,6 +7,7 @@
 .container{max-width: 1200px;
     margin: 0 auto;
     padding: 20px;
+
 }
 body{background-color: pink;
     padding:5px;
@@ -134,4 +135,81 @@ margin-bottom:10px;
     padding: 15px;
     border-radius: 10px;
     background-color: azure;
+}
+.books-to-read{
+display:block;
+margin-bottom: 20px;
+width:300px;
+border: 2px solid black;
+padding: 15px;
+border-radius: 10px;
+background-color: azure;
+}
+.read{
+list-style:square;
+display:block;
+padding:15px;
+}
+
+
+@media (max-width: 500px) {
+  body {
+    flex-direction: column;
+    font-size: 18px;
+    padding: 10px;
+  }
+
+  .container {
+    padding: 10px;
+  }
+
+  header {
+    text-align: center;
+  }
+
+  ul {
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .upcoming-events,
+  .weather,
+  .book-review,
+  #quote-box,
+  .other-reviews,
+  .books-to-read {
+    width: 100%;
+    max-width: 90%;
+  }
+
+  input,
+  textarea,
+  .submit,
+  #getQuote {
+    width: 100%;
+    box-sizing: border-box;
+    font-size: 16px;
+  }
+
+  .logo1 {
+    width: 70px;
+    height: 70px;
+  }
+
+  .read {
+    padding-left: 20px;
+  }
+
+  #quote-box p,
+  .book-review p,
+  .other-reviews p {
+    text-align: center;
+  }
 }

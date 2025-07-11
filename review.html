@@ -8,11 +8,156 @@
 <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
 <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
 <link rel="manifest" href="/site.webmanifest">
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="style2.css">
+    <link rel="manifest" href="/site.webmanifest">
+
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
 </head>
 <body>
+    <div class="container">
+    <header>
+       
      <img src="android-chrome-512x512.png" alt="Book Club Logo" class="logo1">
+      <h1>Gina's Book Club</h1>
+ <nav>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="signin.html">Sign In</a></li>
+            <li><a href="review.html">Review</a></li>
+        </ul>
+    </nav>
+    </header>
 
+    <h2 id="usernames"> 
+        </h2>
+        <div class="section">
+            
+        <div class="upcoming-events">
+            <h2>Upcoming Events</h2>
+            <input type="date" id="event-date" name="event-date" value="2025-10-15">
+            <p>Join us for our next book📖 discussion on <strong>March 15, 2025🕐</strong>. We will be discussing 📕"The Great Gatsby" by F. Scott Fitzgerald.
+            <br>Don't miss our monthly book club meeting on <strong>⏰Every Saturday</strong>. Bring your favorite book to share with the group!😁 Don't forget to bring some snacks🍟 along</p>
+        </div>
+        <div class="weather">
+            <h2>Weather Forecast</h2>
+            <form id="location-form">
+            <input type="text" id="location-input" placeholder="Enter location">
+            <input type="submit" id="get-weather" value="search" class="submit">
+             </form>
+            <div id="weather-info">
+               
+                <p>
+</p>
+            </div>
+            <p id="current-date"> friday, 11 2015</p>
+        </div>
+        <div class="book-review">
+        <h2>Book Review</h2>
+        <p>Would you like to review the book you just read? 
+        we wouldn't take much of your time. 
+        </p>
+        <label>Book title:
+            <input type="text" />
+        </label>
+        <label>
+            Author:
+            <input type="text"/>
+        </label>
+        <textarea>write your review</textarea>
+        <input type="submit" value="submit" class="submit now"/>
+        </div>
+
+       <div id="quote-box">
+  <p id="quote-text">Loading quote...</p>
+  <p id="quote-author"></p>
+  <button id="getQuote">New Quote</button>
+</div>
+
+<div class="other-reviews">
+  
+</div>
+
+
+        </div>
+       
+</div>
 </body>
-<script></script>
+<script>
+   
+  function weather() {
+    const cityInput = document.getElementById("location-input").value;
+    const apiKey = "3ee9046f22cb8dtcf3aa949o097a3347"
+    const apiUrl = `https://api.shecodes.io/weather/v1/current?query=${cityInput}&key=${apiKey}&units=metric`;
+
+      const weatherInfo = document.getElementById("weather-info");
+ weatherInfo.innerHTML = `<div class="emoji-spinner">📚</div>`;
+     
+
+   axios.get(apiUrl)
+    .then(displayTemperature)
+    .catch((error) => {
+      weatherInfo.innerHTML = "Error fetching weather.";
+      console.error(error);
+    });
+  }
+
+  function displayTemperature(response) {
+    const weatherInfo = document.getElementById("weather-info");
+    if (weatherInfo && response.data && response.data.temperature) {
+      weatherInfo.innerHTML = `Temperature: ${response.data.temperature.current}&deg;C`;
+    } 
+  }
+  function search(event) {
+    event.preventDefault();
+    document.getElementById("weather-info").innerHTML = "Loading...";
+
+    weather();
+  }
+
+  document.getElementById("location-form").addEventListener("submit", search);
+  function showStormyLoader() {
+  document.getElementById("stormy-loader").style.display = "flex";
+}
+
+
+
+</script>
+<script src="date.js"></script>
+<script src="review.js" type="module"></script>
+<script>
+  
+const readingQuotes = [
+    { q: "A reader lives a thousand lives before he dies.", a: "George R.R. Martin" },
+    { q: "Books are a uniquely portable magic.", a: "Stephen King" },
+    { q: "Once you learn to read, you will be forever free.", a: "Frederick Douglass" },
+    { q: "So many books, so little time.", a: "Frank Zappa" },
+    { q: "Reading is essential for those who seek to rise above the ordinary.", a: "Jim Rohn" },
+    { q: "A reader lives a thousand lives before he dies.", a: "George R.R. Martin" },
+  { q: "Books are a uniquely portable magic.", a: "Stephen King" },
+  { q: "Once you learn to read, you will be forever free.", a: "Frederick Douglass" },
+  { q: "So many books, so little time.", a: "Frank Zappa" },
+  { q: "Reading is essential for those who seek to rise above the ordinary.", a: "Jim Rohn" },
+  { q: "I have always imagined that Paradise will be a kind of library.", a: "Jorge Luis Borges" },
+  { q: "There is no friend as loyal as a book.", a: "Ernest Hemingway" },
+  { q: "A book is a dream that you hold in your hand.", a: "Neil Gaiman" },
+  { q: "Books wash away from the soul the dust of everyday life.", a: "Unknown" },
+  { q: "Reading gives us someplace to go when we have to stay where we are.", a: "Mason Cooley" }
+  ];
+
+  function fetchRandomQuote() {
+    const quoteText = document.getElementById("quote-text");
+    const quoteAuthor = document.getElementById("quote-author");
+
+    const randomIndex = Math.floor(Math.random() * readingQuotes.length);
+    const quote = readingQuotes[randomIndex];
+
+    quoteText.textContent = `"${quote.q}"`;
+    quoteAuthor.textContent = `— ${quote.a}`;
+  }
+
+  window.addEventListener("DOMContentLoaded", () => {
+    fetchRandomQuote();
+    document.getElementById("getQuote").addEventListener("click", fetchRandomQuote);
+  });
+</script>
 </html>

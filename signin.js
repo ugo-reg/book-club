@@ -13,21 +13,44 @@ const firebaseConfig = {
 const app = initializeApp(firebaseConfig);
 const auth = getAuth(app);
 
-const signupForm = document.getElementById("signin-form");
 
-signupForm.addEventListener("submit", function(e) {
-  e.preventDefault();
+export { auth, app };
 
-  const email = document.getElementById("username").value;
-  const password = document.getElementById("password").value;
+document.addEventListener("DOMContentLoaded", () => {
+  const signupForm = document.getElementById("signin-form");
+  if (signupForm) {
+    signupForm.addEventListener("submit", function(e) {
+      e.preventDefault();
+      const email1 = document.getElementById("username").value;
+      const password1 = document.getElementById("password").value;
 
-  createUserWithEmailAndPassword(auth, email, password)
-    .then(userCredential => {
-
-      alert("Account created: " + userCredential.user.email);
-      window.location.href = "review.html";
-    })
-    .catch(error => {
-      alert("Error: " + error.message);
+      createUserWithEmailAndPassword(auth, email1, password1)
+        .then(userCredential => {
+          alert("Account created: " + userCredential.user.email);
+          window.location.href = "review.html";
+        })
+        .catch(error => {
+          alert("Error: " + error.message);
+        });
     });
+  }
+
+  const loginForm = document.getElementById("login-form");
+  if (loginForm) {
+    loginForm.addEventListener("submit", function(e) {
+      console.log("Login form submitted");
+      e.preventDefault();
+      const email = document.getElementById("name").value;
+      const password = document.getElementById("access").value;
+
+      signInWithEmailAndPassword(auth, email, password)
+        .then(userCredential => {
+          alert("Logged in: " + userCredential.user.email);
+          window.location.href = "review.html";
+        })
+        .catch(error => {
+          alert("Error: " + error.message);
+        });
+    });
+  }
 });

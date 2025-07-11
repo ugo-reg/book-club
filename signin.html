@@ -9,6 +9,8 @@
 <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
 <link rel="manifest" href="/site.webmanifest">
     <link rel="stylesheet" href="styles1.css">
+    <link rel="manifest" href="/site.webmanifest">
+
 
 
 </head>
@@ -20,7 +22,7 @@
         <ul>
             <li><a href="index.html">Home</a></li>
             <li><a href="signin.html">Sign In</a></li>
-            <li><a href="review.html">Review</a></li>
+             <li><a href="review.html">Review</a></li>
         </ul>
     </nav>
     <h1>
@@ -28,8 +30,10 @@
         </h1>
     </header>
     <form id="signin-form">
-    <h2>Sign In</h2>         
-    <label for="username">Username:
+    <h2>Sign Up</h2>         
+    <p>Welcome to Gina's Book Club! <br>Please sign up to join our community of book lovers.</p>
+    <p>Fill in the form below to create your account:</p>
+    <label for="username">  Email:
     <input type="text" id="username" name="username" required>
     </label>
     <label for="password">Password:
@@ -37,6 +41,24 @@
 </label>
 <button type="submit" class="signIn" id="signIn">Sign In</button>
 </form>
+<details>
+    <summary>Already have an account? Click here to log in</summary>
+    <p>Already have an account? Click here to log in</a>.</p>
+    <div id="hidden-collapse" class="hidden-collapse">
+        <form id="login-form">
+            <label>
+          Username:
+                <input type="email" id="name" name="email" required>
+            </label>
+            <label>
+                Password:
+                <input type="password" id="access" name="password" required>
+                <button type="submit" class="login" id="login">Log In</button>
+        </form>
+    </div>
+    </details>
+    
+    <p>Happy reading!</p>
    <footer>
         <p>&copy; 2025 Gina's Book Club. All rights reserved.</p>
    
@@ -44,4 +66,5 @@
     </div>
 </body>
 <script src="signin.js" type="module"></script>
+<script>    </script>
 </html>

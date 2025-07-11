@@ -9,6 +9,7 @@ padding:5px;
 background-color:azure;
 border:2px solid #fbc7eb;
 border-radius: 5px;
+height:2em
 }
 
 body{
@@ -66,4 +67,16 @@ font-size: 18px;
 footer{
 text-align: center;
 margin-top: 20px;
-font-size: 14px;}
+font-size: 14px;
+color: #666;
+}
+h2{
+    text-align: center;
+}
+details {
+    margin: 20px auto;
+    max-width: 600px;
+    padding: 15px;
+    border-radius: 5px;
+
+}

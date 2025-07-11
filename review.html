@@ -56,15 +56,17 @@
         <p>Would you like to review the book you just read? 
         we wouldn't take much of your time. 
         </p>
+        <form id="review-form">
         <label>Book title:
-            <input type="text" />
+            <input type="text" id="book-title" />
         </label>
         <label>
             Author:
-            <input type="text"/>
+            <input type="text" id="book-author"/>
         </label>
-        <textarea>write your review</textarea>
-        <input type="submit" value="submit" class="submit now"/>
+        <textarea id="review">write your review</textarea>
+        <input type="submit" value="submit" class="submit now" id="add-review"/>
+        </form>
         </div>
 
        <div id="quote-box">
@@ -74,14 +76,78 @@
 </div>
 
 <div class="other-reviews">
-  
+  <h2> Other Reviews</h2>
+
+<ul id="review-list"></ul>
 </div>
 
-
-        </div>
+  </div>
        
 </div>
 </body>
+<script type="module">
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/9.15.0/firebase-app.js";
+  import { getDatabase, ref, push, onValue } from "https://www.gstatic.com/firebasejs/9.15.0/firebase-database.js";
+
+  const appSettings = {
+    databaseURL: "https://gina-s-book-review-default-rtdb.europe-west1.firebasedatabase.app/"
+  };
+
+  const app = initializeApp(appSettings);
+  const db = getDatabase(app);
+  const reviewInDb = ref(db, "review");
+
+ 
+  const form = document.getElementById("review-form");
+  const reviewInput = document.getElementById("review");
+  const titleInput = document.getElementById("book-title");
+  const authorInput = document.getElementById("book-author");
+  const reviewList = document.getElementById("review-list");
+
+  form.addEventListener("submit", function (event) {
+    event.preventDefault(); 
+
+    const review = reviewInput.value.trim();
+    const title = titleInput.value.trim();
+    const author = authorInput.value.trim();
+
+    if (review) {
+      const reviewObject = {
+        title: title || "Untitled",
+        author: author || "Anonymous",
+        text: review
+      };
+
+      push(reviewInDb, reviewObject); 
+
+      
+      reviewInput.value = "";
+      titleInput.value = "";
+      authorInput.value = "";
+    }
+  });
+
+  
+  onValue(reviewInDb, function (snapshot) {
+    reviewList.innerHTML = "";
+    if (snapshot.exists()) {
+      const reviewArray = Object.entries(snapshot.val());
+      for (let i = 0; i < reviewArray.length; i++) {
+        const [id, reviewData] = reviewArray[i];
+        addReviewToPage(reviewData);
+      }
+    } else {
+      reviewList.innerHTML = "<li>No reviews yet.</li>";
+    }
+  });
+
+  function addReviewToPage(review) {
+    const li = document.createElement("li");
+    li.textContent = `"${review.title}" by ${review.author}: ${review.text}`;
+    reviewList.appendChild(li);
+  }
+
+</script>
 <script>
    
   function weather() {

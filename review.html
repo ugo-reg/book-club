@@ -4,94 +4,85 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Book Club</title>
-    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
-<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
-<link rel="manifest" href="/site.webmanifest">
+    <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
     <link rel="stylesheet" href="style2.css">
-    <link rel="manifest" href="/site.webmanifest">
-
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
 </head>
 <body>
-    <div class="container">
-    <header>
-       
-     <img src="android-chrome-512x512.png" alt="Book Club Logo" class="logo1">
-      <h1>Gina's Book Club</h1>
+  <div class="container">
+<header>   
+    <img src="android-chrome-512x512.png" alt="Book Club Logo" class="logo1">
+  <h1>
+    Gina's Book Club
+  </h1>
  <nav>
-        <ul>
-            <li><a href="index.html">Home</a></li>
-            <li><a href="signin.html">Sign In</a></li>
-            <li><a href="review.html">Review</a></li>
-        </ul>
-    </nav>
-    </header>
-
-    <h2 id="usernames"> 
-        </h2>
-        <div class="section">
-            
-        <div class="upcoming-events">
-            <h2>Upcoming Events</h2>
-            <input type="date" id="event-date" name="event-date" value="2025-10-15">
-            <p>Join us for our next book📖 discussion on <strong>March 15, 2025🕐</strong>. We will be discussing 📕"The Great Gatsby" by F. Scott Fitzgerald.
-            <br>Don't miss our monthly book club meeting on <strong>⏰Every Saturday</strong>. Bring your favorite book to share with the group!😁 Don't forget to bring some snacks🍟 along</p>
-        </div>
-        <div class="weather">
-            <h2>Weather Forecast</h2>
-            <form id="location-form">
-            <input type="text" id="location-input" placeholder="Abuja">
-            <input type="submit" id="get-weather" value="search" class="submit">
-             </form>
-            <div id="weather-info">
-            </div>
-            <p id="current-date"> friday, 10 2015</p>
-        </div>
-        <div class="book-review">
-        <h2>Book Review</h2>
-        <p>Would you like to review the book you just read? 
-        we wouldn't take much of your time. 
-        </p>
-        <form id="review-form">
-        <label>Book title:
-            <input type="text" id="book-title" />
-        </label>
-        <label>
-            Author:
-            <input type="text" id="book-author"/>
-        </label>
-        <textarea id="review">write your review</textarea>
-        <input type="submit" value="submit" class="submit now" id="add-review"/>
-        </form>
-        </div>
-
-       <div id="quote-box">
-  <p id="quote-text">Loading quote...</p>
-  <p id="quote-author"></p>
-  <button id="getQuote">New Quote</button>
-</div>
-
-<div class="other-reviews">
-  <h2> Other Reviews</h2>
-
-<ul id="review-list"></ul>
-</div>
-<div class="books-to-read">
-<h2>Books to read</h2>
-<ul class="read">
-  <li>Gatsby</li>
-  <li></li>
-  <li></li>
-  <li></li>
-  <li></li>
-  <li></li>
-</ul>
-</div>
-
+   <ul>
+     <li><a href="index.html">Home</a></li>
+     <li><a href="signin.html">Sign In</a></li>
+     <li><a href="review.html">Review</a></li>
+   </ul>
+ </nav>
+</header>
+  <h2 id="usernames"> </h2>
+<div class="section">
+  <div class="upcoming-events">
+    <h2>Upcoming Events</h2>
+    <input type="date" id="event-date" name="event-date" value="2025-10-15">
+    <p>Join us for our next book📖 discussion on <strong>October 15, 2025🕐</strong>. We will be discussing 📕
+      "The Great Gatsby" by F. Scott Fitzgerald.
+    <br>Don't miss our monthly book club meeting on <strong>⏰Every Saturday</strong>. Bring your favorite book
+       to share with the group!😁 Don't forget to bring some snacks🍟 along</p>
   </div>
-       
-</div>
+  <div class="weather">
+    <h2>Weather Forecast</h2>
+   <form id="location-form">
+      <input type="text" id="location-input" placeholder="Abuja">
+      <input type="submit" id="get-weather" value="search" class="submit">
+   </form>
+    <div id="weather-info">
+    </div>
+      <p id="current-date"> friday, 10 2015</p>
+  </div>
+  <div class="book-review">
+    <h2>Book Review</h2>
+    <p>Would you like to review the book you just read? 
+       we wouldn't take much of your time. 
+    </p>
+    <form id="review-form">
+      <label>Book title:
+        <input type="text" id="book-title" />
+      </label>
+      <label>Author:
+        <input type="text" id="book-author"/>
+      </label>
+      <textarea id="review">write your review</textarea>
+        <input type="submit" value="submit" class="submit now" id="add-review"/>
+    </form>
+  </div>
+  <div id="quote-box">
+    <p id="quote-text">Loading quote...</p>
+    <p id="quote-author"></p>
+    <button id="getQuote">New Quote</button>
+  </div>
+  <div class="other-reviews">
+    <h2> Other Reviews</h2>
+      <ul id="review-list"></ul>
+  </div>
+  <div class="books-to-read">
+    <h2>Books to read</h2>
+      <ul class="read">
+        <li>The Divine Comedy: by Dante Alighieri</li>
+        <li>Anna Karenina: by Leo Tolstoy</li>
+        <li>Harry Potter series: by J.K. Rowling</li>
+        <li>My Experiments with Truth: by Mahatma Gandhi </li>
+        <li>A Tale of Two Cities, David Copperfield: by Charles Dickens</li>
+        <li>1984: by George Orwell</li>
+      </ul>
+  </div>
+ </div>
+ </div>
 </body>
 <script type="module">
     import { initializeApp } from "https://www.gstatic.com/firebasejs/9.15.0/firebase-app.js";

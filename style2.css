@@ -61,38 +61,41 @@ gap: 20px;
     padding: 15px;
     border-radius: 10px;
     background-color: azure;
-
 }  
 
 .weather-info{
-    padding:10px;
-margin-top:5px;
+ padding:10px;
+ margin-top:5px;
 }
-input{ display:flex;
-    padding:10px;
-margin-bottom:10px;
-border-radius: 10px;
-border:1px solid black
+input{ 
+ display:flex;
+ padding:10px;
+ margin-bottom:10px;
+ border-radius: 10px;
+ border:1px solid black
 }
 
 .submit{
-background-color:#FFEBF4;
-color: #333;
-border: none;
-padding: 10px 20px;
-border-radius: 5px;
-cursor: pointer;
-box-shadow: 0 2px 5px rgba(0, 0, 0, 0.4);
-margin:0 auto;
-margin-bottom:10px;
+ background-color:#FFEBF4;
+ color: #333;
+ border: none;
+ padding: 10px 20px;
+ border-radius: 5px;
+ cursor: pointer;
+ box-shadow: 0 2px 5px rgba(0, 0, 0, 0.4);
+ margin:0 auto;
+ margin-bottom:10px;
 }
-#usernames{text-align: center;}
+
+#usernames{
+ text-align: center;
+}
 
 .emoji-spinner {
-  font-size: 2rem;
-  animation: spin-emoji 1s linear infinite;
-  text-align: center;
-  margin: 20px auto;
+ font-size: 2rem;
+ animation: spin-emoji 1s linear infinite;
+ text-align: center;
+ margin: 20px auto;
 }
 
 @keyframes spin-emoji {
@@ -100,60 +103,63 @@ margin-bottom:10px;
   100% { transform: rotate(360deg); }
 }
 
-#quote-box{ display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin-bottom: 20px;
-    width:300px;
-    border: 2px solid black;
-    padding: 15px;
-    border-radius: 10px;
-    background-color: azure;
+#quote-box{ 
+ display: flex;
+ flex-direction: column;
+ align-items: center;
+ margin-bottom: 20px;
+ width:300px;
+ border: 2px solid black;
+ padding: 15px;
+ border-radius: 10px;
+ background-color: azure;
 }
 
 #getQuote{
-    background-color:#FFEBF4;
-color: #333;
-border: none;
-padding: 10px 20px;
-border-radius: 5px;
-cursor: pointer;
-box-shadow: 0 2px 5px rgba(0, 0, 0, 0.4);
-margin:0 auto;
-margin-bottom:10px;
+ background-color:#FFEBF4;
+ color: #333;
+ border: none;
+ padding: 10px 20px;
+ border-radius: 5px;
+ cursor: pointer;
+ box-shadow: 0 2px 5px rgba(0, 0, 0, 0.4);
+ margin:0 auto;
+ margin-bottom:10px;
 }
-.now{margin-top:10px;
+.now{
+ margin-top:10px;
 }
 
 .other-reviews{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin-bottom: 20px;
-    width:300px;
-    border: 2px solid black;
-    padding: 15px;
-    border-radius: 10px;
-    background-color: azure;
-}
-.books-to-read{
-display:block;
-margin-bottom: 20px;
-width:300px;
-border: 2px solid black;
-padding: 15px;
-border-radius: 10px;
-background-color: azure;
-}
-.read{
-list-style:square;
-display:block;
-padding:15px;
+ display: flex;
+ flex-direction: column;
+ align-items: center;
+ margin-bottom: 20px;
+ width:300px;
+ border: 2px solid black;
+ padding: 15px;
+ border-radius: 10px;
+ background-color: azure;
 }
 
+.books-to-read{
+ display:block;
+ margin-bottom: 20px;
+ width:300px;
+ border: 2px solid black;
+ padding: 15px;
+ border-radius: 10px;
+ background-color: azure;
+}
+
+.read{
+ list-style:square;
+ display:block;
+ padding:15px;
+}
 
 @media (max-width: 500px) {
-  body {
+  body{
     flex-direction: column;
     font-size: 18px;
     padding: 10px;

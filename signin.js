@@ -26,8 +26,10 @@ document.addEventListener("DOMContentLoaded", () => {
 
       createUserWithEmailAndPassword(auth, email1, password1)
         .then(userCredential => {
-          alert("Account created: " + userCredential.user.email);
-          window.location.href = "review.html";
+        document.getElementById("signup-message").innerText = "Account created: " + userCredential.user.email
+        setTimeout (() => { 
+        window.location.href = "review.html";
+        }, 5000);
         })
         .catch(error => {
           alert("Error: " + error.message);
@@ -38,15 +40,17 @@ document.addEventListener("DOMContentLoaded", () => {
   const loginForm = document.getElementById("login-form");
   if (loginForm) {
     loginForm.addEventListener("submit", function(e) {
-      console.log("Login form submitted");
+    
       e.preventDefault();
       const email = document.getElementById("name").value;
       const password = document.getElementById("access").value;
 
       signInWithEmailAndPassword(auth, email, password)
         .then(userCredential => {
-          alert("Logged in: " + userCredential.user.email);
-          window.location.href = "review.html";
+          document.getElementById("hidden-collapse").innerText="Logged In:" + userCredential.user.email
+         setTimeout (() =>   {
+         window.location.href = "review.html";
+         }, 8000);
         })
         .catch(error => {
           alert("Error: " + error.message);

@@ -1,5 +1,5 @@
 import { initializeApp } from "https://www.gstatic.com/firebasejs/10.1.0/firebase-app.js";
-import { getAuth, signInWithEmailAndPassword, createUserWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/10.1.0/firebase-auth.js";
+import { getAuth, signInWithEmailAndPassword, createUserWithEmailAndPassword, signOut } from "https://www.gstatic.com/firebasejs/10.1.0/firebase-auth.js";
 
 const firebaseConfig = {
   apiKey: "AIzaSyCwPiJYsbTydDmnJAdzx5uXgRBs_TfkCeI",
@@ -50,7 +50,7 @@ document.addEventListener("DOMContentLoaded", () => {
           document.getElementById("hidden-collapse").innerText="Logged In:" + userCredential.user.email
          setTimeout (() =>   {
          window.location.href = "review.html";
-         }, 8000);
+         }, 4000);
         })
         .catch(error => {
           alert("Error: " + error.message);

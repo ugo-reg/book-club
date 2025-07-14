@@ -157,6 +157,22 @@ input{
  display:block;
  padding:15px;
 }
+button{
+background-color:#FFEBF4;
+color: #333;
+border: none;
+padding: 10px 20px;
+border-radius: 5px;
+cursor: pointer;
+box-shadow: 0 2px 5px rgba(0, 0, 0, 0.4);
+}
+
+button:hover{
+background-color: #FFB6C1;
+color:white;
+border: 2px solid rgb(253, 162, 177);
+box-shadow: 0 4px 10px rgba(0, 0, 0, 0.6);
+}
 
 @media (max-width: 500px) {
   body{

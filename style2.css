@@ -17,7 +17,8 @@ body{background-image:url("https://images.unsplash.com/photo-1604361709763-44f7f
     font-size: 24px;
     color: black;
 }
-
+#usernames{color:white;}
+h1{color:white;}
 header{
     text-align: center;
 }
